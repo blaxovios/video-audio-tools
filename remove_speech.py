@@ -8,7 +8,7 @@ import time
 
 class AudioTools:
     def __init__(self) -> None:
-        self.video_path = "/mnt/e/CapCut Edited/11 έως 13 Νοεμβρίου 2023 Αιδηψός Δίρφυς/Δίρφυς Μονοπάτια Σ2 και Σ3 20231112.mp4"
+        self.video_path = "/mnt/A/AAAAA/AAAA/AA.mp4"
         
         pass
     
