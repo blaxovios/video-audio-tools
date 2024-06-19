@@ -1,24 +1,24 @@
 import librosa
 import soundfile as sf
 import moviepy.editor as mp
-import io
+import logging
 import numpy as np
 import time
 
+from src.functions import GeneralFunctions
 
-class AudioTools:
+
+class AudioTools(GeneralFunctions):
     def __init__(self) -> None:
-        self.video_path = "/mnt/A/AAAAA/AAAA/AA.mp4"
-        
-        pass
+        self.configs_dict = self.load_toml("configs/configs.toml")
     
-    def remove_speech_from_audio(self):
+    def remove_speech_from_audio(self) -> None:
         # Extract audio
         start_time = time.time()
         video = mp.VideoFileClip(self.video_path)
         audio_only_path = "static/exports/audio_only.wav"
         video.audio.write_audiofile(audio_only_path)
-        print("Extracted audio from video.")
+        logging.info("Extracted audio from video.")
         
         # Extract vocals
         y, sr = librosa.load(audio_only_path)
@@ -28,7 +28,7 @@ class AudioTools:
                                             metric='cosine',
                                             width=int(librosa.time_to_frames(2, sr=sr)))
         S_filter = np.minimum(S_full, S_filter)
-        print("Decomposed.")
+        logging.info("Decomposed.")
         # We can also use a margin to reduce bleed between the vocals and instrumentation masks.
         # Note: the margins need not be equal for foreground and background separation
         margin_i, margin_v = 2, 10
@@ -49,17 +49,17 @@ class AudioTools:
         audio_no_speech_path = "static/exports/audio_only_without_speech.wav"
         sf.write(audio_no_speech_path, new_y, sr)
 
-        print('Vocals Separated')
+        logging.info('Vocals Separated')
         
         # Replace audio with no speech inside
         video_no_audio = video.without_audio()
         audio_no_speech = mp.CompositeAudioClip([audio_no_speech_path])
         video_no_audio.audio = audio_no_speech
-        video_export_path = self.video_path.rsplit(".", 1)[0] + " NO SPEECH.mp4"
+        video_export_path = self.configs_dict['GENERAL']['VIDEO_PATH'].rsplit(".", 1)[0] + " NO SPEECH.mp4"
         video_no_audio.write_videofile(video_export_path)
         end_time = time.time()
         time_lapsed = end_time - start_time
-        print(f'Time to read multiple files in cloud: {time_lapsed}')
+        logging.info(f'Time to read multiple files in cloud: {time_lapsed}')
         return
     
     
