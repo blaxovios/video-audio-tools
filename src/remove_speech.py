@@ -343,9 +343,11 @@ class VocalSpeechExtractor:
 if __name__ == "__main__":
     use_my_model = True
     if not use_my_model:
+        # TODO: Use more tuning parameters with librosa to enhance quality and other techniques
         audio_tools = AudioTools()
         audio_tools.main(audio_dir='/mnt/c/Users/tsepe/Downloads/BiglyBT/Madonna')
     else:
+        # TODO: Use quality vocals+speech from AudioTools class and librosa to fine tune a model with thousands of songs in a big variety of genres
         # Update these paths with the actual locations of your model and audio file.
         model_path = 'models/vocal_separator_model.pth'
         mixture_file = '/mnt/c/Users/tsepe/Downloads/Madonna_-_La_Isla_Bonita.mp3'
