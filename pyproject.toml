@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "video-audio-tools"
 version = "1.0.0"
-dependencies = ["hatch", "tox", "numpy", "rtoml", "moviepy", "librosa", "soundfile"] 
+dependencies = ["hatch", "tox", "numpy", "rtoml", "moviepy", "librosa", "soundfile", "audioread"] 
 requires-python = ">=3.12"
 authors = [
   {name = "Konstantinos Skepetaris", email = "tsepe21@hotmail.com"}

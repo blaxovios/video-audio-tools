@@ -1,33 +1,46 @@
-from os import getenv
 import logging
 from typing import NoReturn, Union
 import sys
 import rtoml
-import os
+from os import path, makedirs
 
 
 class GeneralFunctions(object):
+    
     def __init__(self) -> None:
         pass
-    
-    def local_logger(self, file_path: str='logs/debug.log'):
-        """ Set up a local logger
 
-        Args:
-            file_path (str, optional): _description_. Defaults to 'logs/debug.log'.
-        """
-        local_logging = getenv(key="LOCAL_LOGGING", default=False)
-        if local_logging:
-            os.makedirs(os.path.dirname(file_path), exist_ok=True)
-            logging.basicConfig(
-                level=logging.INFO,
-                format="%(asctime)s [%(levelname)s] %(message)s",
-                handlers=[
-                    logging.FileHandler(file_path),
-                    logging.StreamHandler()
-                ]
-            )
-        return
+    def setup_logging(self, debug_filename: str = 'debug') -> None:
+        """Attach default Cloud Logging handler to the root logger."""
+        root_logger = logging.getLogger()
+        
+        # Clear existing handlers
+        if root_logger.hasHandlers():
+            root_logger.handlers.clear()
+
+        # Running locally
+        logging.basicConfig(level=logging.INFO)
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.INFO)
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        console_handler.setFormatter(formatter)
+        root_logger.addHandler(console_handler)
+
+        # Ensure the log directory exists
+        log_dir = 'logs'
+        if not path.exists(log_dir):
+            makedirs(log_dir)
+
+        # Add file handler to log to a file
+        file_handler = logging.FileHandler(f'logs/{debug_filename}.log')
+        file_handler.setLevel(logging.DEBUG)
+        file_handler.setFormatter(formatter)
+        root_logger.addHandler(file_handler)
+        
+        logging.info("Local logging setup complete")
+        
+        # Print current handlers after setup
+        print("Handlers after setup:", root_logger.handlers)
         
     def load_toml(self, toml_file_path: str) -> Union[dict, NoReturn]:
         """ Load a toml file and return it as a dictionary

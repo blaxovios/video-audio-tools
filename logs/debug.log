@@ -1,0 +1,51 @@
+2025-03-14 23:54:30,078 - root - INFO - Local logging setup complete
+2025-03-14 23:54:30,081 - root - INFO - Loaded audio from local path
+2025-03-14 23:55:02,644 - root - INFO - Decomposed.
+2025-03-14 23:55:03,408 - root - INFO - Vocals Separated
+2025-03-14 23:55:03,409 - root - INFO - Time to extract speech from audio: 33.32761883735657
+2025-03-14 23:57:20,232 - root - INFO - Local logging setup complete
+2025-03-14 23:57:20,235 - root - INFO - Loaded audio from local path
+2025-03-14 23:57:52,894 - root - INFO - Decomposed.
+2025-03-14 23:57:53,645 - root - INFO - Vocals Separated
+2025-03-14 23:57:53,646 - root - INFO - Time to extract speech from audio: 33.41000294685364
+2025-03-14 23:58:44,439 - root - INFO - Local logging setup complete
+2025-03-14 23:58:44,442 - root - INFO - Loaded audio from local path
+2025-03-14 23:59:16,272 - root - INFO - Decomposed.
+2025-03-14 23:59:17,060 - root - INFO - Vocals Separated
+2025-03-14 23:59:17,060 - root - INFO - Time to extract speech from audio: 32.61817455291748
+2025-03-15 00:02:57,691 - root - INFO - Local logging setup complete
+2025-03-15 00:02:57,694 - root - INFO - Loaded audio from local path
+2025-03-15 00:03:23,556 - root - INFO - Local logging setup complete
+2025-03-15 00:03:23,559 - root - INFO - Loaded audio from local path
+2025-03-15 00:03:55,514 - root - INFO - Decomposed.
+2025-03-15 00:03:56,474 - root - INFO - Vocals and Speech Separated
+2025-03-15 00:03:56,474 - root - INFO - Time to extract vocals and speech from audio: 32.91534185409546
+2025-03-15 00:04:19,648 - root - INFO - Local logging setup complete
+2025-03-15 00:04:19,652 - root - INFO - Loaded audio from local path
+2025-03-15 00:04:52,153 - root - INFO - Decomposed.
+2025-03-15 00:04:53,101 - root - INFO - Vocals and Speech Separated
+2025-03-15 00:04:53,101 - root - INFO - Time to extract vocals and speech from audio: 33.44879865646362
+2025-03-15 00:06:27,906 - root - INFO - Local logging setup complete
+2025-03-15 00:06:27,910 - root - INFO - Loaded audio from local path
+2025-03-15 00:06:59,881 - root - INFO - Decomposed.
+2025-03-15 00:07:00,859 - root - INFO - Vocals and Speech Separated
+2025-03-15 00:07:00,859 - root - INFO - Time to extract vocals and speech from audio: 32.94910788536072
+2025-03-15 00:08:53,449 - root - INFO - Local logging setup complete
+2025-03-15 00:08:53,452 - root - INFO - Loaded audio from local path
+2025-03-15 00:09:04,271 - root - INFO - Decomposed.
+2025-03-15 00:11:55,268 - root - INFO - Local logging setup complete
+2025-03-15 00:11:55,271 - root - INFO - Loaded audio from local path
+2025-03-15 00:12:05,966 - root - INFO - Decomposed.
+2025-03-15 00:13:21,075 - root - INFO - Local logging setup complete
+2025-03-15 00:13:21,079 - root - INFO - Loaded audio from local path
+2025-03-15 00:13:31,946 - root - INFO - Decomposed.
+2025-03-15 00:14:23,357 - root - INFO - Local logging setup complete
+2025-03-15 00:14:23,361 - root - INFO - Loaded audio from local path
+2025-03-15 00:14:34,296 - root - INFO - Decomposed.
+2025-03-15 00:14:36,302 - root - INFO - Vocals and Speech Separated
+2025-03-15 00:14:36,302 - root - INFO - Time to extract vocals and speech from audio: 12.941086292266846
+2025-03-15 00:15:54,124 - root - INFO - Local logging setup complete
+2025-03-15 00:15:54,128 - root - INFO - Loaded audio from local path
+2025-03-15 00:16:26,412 - root - INFO - Decomposed.
+2025-03-15 00:16:27,413 - root - INFO - Vocals and Speech Separated
+2025-03-15 00:16:27,413 - root - INFO - Time to extract vocals and speech from audio: 33.28557205200195
