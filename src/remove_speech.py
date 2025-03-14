@@ -2,10 +2,12 @@ import librosa
 from soundfile import SoundFile, write
 from moviepy import VideoFileClip, CompositeAudioClip
 import logging
-from numpy import median, minimum, ndarray
+from numpy import median, minimum, ndarray, pad
 import time
 from typing import Union, NoReturn, Tuple
-from os import makedirs
+from os import makedirs, path, listdir
+import torch
+import concurrent
 # Import local functions
 from functions import GeneralFunctions
 
@@ -190,42 +192,165 @@ class AudioTools(GeneralFunctions):
         logging.info(f'Time to extract vocals and speech from audio: {time_lapsed}')
         return vocals_ndarray, speech_ndarray, sr
     
-    def write_audio_to_file(self, audio_ndarray: ndarray, sample_rate: int, directory: str, filename: str) -> None:
+    def write_audio_to_file(self, audio_data: dict, sample_rate: int, directory: str) -> None:
         """
-        Writes a list of audio bytes to .wav files in a specified directory.
+        Writes audio data to .wav files in specified subdirectories for speech and vocals.
 
         Args:
-            audio_bytes_list (List[bytes]): A list of bytes representing audio data.
-            directory (str): The directory to write the audio files to.
+            audio_data (dict): A dictionary with keys as filenames and values as ndarrays of audio data.
+            directory (str): The base directory to write the audio files to.
         """
-        makedirs(directory, exist_ok=True)
-        write(f"{directory}/{filename}.wav", audio_ndarray, sample_rate, subtype='PCM_24')
-                
-    def main(self, audio_path: str, extract_audio_from_video: bool = False) -> None:
-        """
-        Main function to remove speech from audio.
+        speech_dir = f"{directory}/speech"
+        vocals_dir = f"{directory}/vocals"
+        makedirs(speech_dir, exist_ok=True)
+        makedirs(vocals_dir, exist_ok=True)
+        
+        for filename, audio_ndarray in audio_data.items():
+            if "speech" in filename:
+                write(f"{speech_dir}/{filename}.wav", audio_ndarray, sample_rate, subtype='PCM_24')
+            elif "vocal" in filename:
+                write(f"{vocals_dir}/{filename}.wav", audio_ndarray, sample_rate, subtype='PCM_24')
 
-        Args:
-            audio_path (str): The path to the audio file to be processed.
-            extract_audio_from_video (bool, optional): If True, the audio is extracted from a video. Defaults to False.
-        """
+    def process_file(self, file_name: str, audio_dir: str, extract_audio_from_video: bool = False) -> None:
+        file_path = path.join(audio_dir, file_name)
         
         # Extract audio into binary_io
         if extract_audio_from_video:
-            audio_bytes, audio_path = audio_tools.extract_audio_from_video()
+            audio_bytes, audio_path = self.extract_audio_from_video(file_path)
             if audio_bytes == b'':
-                audio_bytes, loaded = audio_tools.add_audio_from_local_path_to_binary_io(audio_path)
+                audio_bytes, loaded = self.add_audio_from_local_path_to_binary_io(audio_path)
         else:
-            audio_bytes, loaded = audio_tools.add_audio_from_local_path_to_binary_io(audio_path)
+            audio_bytes, loaded = self.add_audio_from_local_path_to_binary_io(file_path)
             
         if not loaded:
             return
         
-        vocals_ndarray, speech_ndarray, sr = audio_tools.extract_vocals_and_speech_from_audio(audio=audio_bytes)
-        audio_tools.write_audio_to_file(audio_ndarray=speech_ndarray, sample_rate=sr, directory="exports/audio", filename="speech_only")
-        audio_tools.write_audio_to_file(audio_ndarray=vocals_ndarray, sample_rate=sr, directory="exports/audio", filename="vocals_only")
+        vocals_ndarray, speech_ndarray, sr = self.extract_vocals_and_speech_from_audio(audio=audio_bytes)
+        audio_data = {
+            f"{file_name}_speech_only": speech_ndarray,
+            f"{file_name}_vocals_only": vocals_ndarray,
+        }
+        self.write_audio_to_file(audio_data=audio_data, sample_rate=sr, directory="exports/audio")
     
+    def main(self, audio_dir: str, extract_audio_from_video: bool = False) -> None:
+        """
+        Main function to remove speech from audio files in a directory using multithreading.
+
+        Args:
+            audio_dir (str): The directory containing audio files to be processed.
+            extract_audio_from_video (bool, optional): If True, the audio is extracted from videos. Defaults to False.
+        """
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            executor.map(lambda file_name: self.process_file(file_name, audio_dir, extract_audio_from_video), 
+                         [file for file in listdir(audio_dir) if file.split('.')[-1] in ['wav', 'mp3', 'ogg', 'flac']])
+
+
+# Define the updated model architecture to output two channels: vocals and speech.
+class VocalSeparatorModel(torch.nn.Module):
+    def __init__(self):
+        super(VocalSeparatorModel, self).__init__()
+        # Encoder: compress the input audio.
+        self.encoder = torch.nn.Sequential(
+            torch.nn.Conv1d(in_channels=1, out_channels=16, kernel_size=5, stride=2, padding=2),
+            torch.nn.ReLU(),
+            torch.nn.Conv1d(in_channels=16, out_channels=32, kernel_size=5, stride=2, padding=2),
+            torch.nn.ReLU()
+        )
+        # Decoder: reconstruct two outputs: vocals (channel 0) and speech (channel 1).
+        self.decoder = torch.nn.Sequential(
+            torch.nn.ConvTranspose1d(in_channels=32, out_channels=16, kernel_size=4, stride=2, padding=1),
+            torch.nn.ReLU(),
+            torch.nn.ConvTranspose1d(in_channels=16, out_channels=2, kernel_size=4, stride=2, padding=1)
+        )
+    
+    def forward(self, x):
+        # x: shape (batch_size, signal_length)
+        x = x.unsqueeze(1)  # (batch_size, 1, signal_length)
+        encoded = self.encoder(x)
+        decoded = self.decoder(encoded)  # (batch_size, 2, signal_length_estimated)
+        return decoded
+
+# The extractor class now extracts both vocals and speech.
+class VocalSpeechExtractor:
+    def __init__(self, model_path, device='cpu', sample_rate=16000):
+        """
+        Initializes the extractor with a pre-trained model.
+        :param model_path: Path to the saved model (.pth file).
+        :param device: Device to run inference ('cpu' or 'cuda').
+        :param sample_rate: Sample rate for audio processing.
+        """
+        self.device = torch.device(device)
+        self.sample_rate = sample_rate
+        self.model = VocalSeparatorModel().to(self.device)
+        self.load_model(model_path)
+
+    def load_model(self, model_path):
+        """Load the saved model state dictionary."""
+        self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+        self.model.eval()
+        logging.info("Model loaded from", model_path)
+
+    @staticmethod
+    def adjust_length(output, target_length):
+        """
+        Adjusts the output numpy array to match the target length by cropping or padding.
+        :param output: Numpy array from model output.
+        :param target_length: Desired output length.
+        :return: Adjusted numpy array.
+        """
+        output_length = len(output)
+        if output_length > target_length:
+            return output[:target_length]
+        elif output_length < target_length:
+            return pad(output, (0, target_length - output_length))
+        return output
+
+    def extract_sources(self, mixture_file, output_vocals_file, output_speech_file):
+        """
+        Loads a mixture audio file (any duration), extracts vocals and speech using the model,
+        and saves the two outputs separately.
+        :param mixture_file: Path to the mixture audio file.
+        :param output_vocals_file: Path to save the extracted vocals.
+        :param output_speech_file: Path to save the extracted speech.
+        """
+        # Load the entire audio file (variable duration)
+        mixture_audio, sr = librosa.load(mixture_file, sr=self.sample_rate)
+        original_length = len(mixture_audio)
+        
+        # Convert the mixture to a tensor and add a batch dimension
+        mixture_tensor = torch.tensor(mixture_audio, dtype=torch.float32).unsqueeze(0).to(self.device)
+        
+        # Run inference; the output shape is (batch_size, 2, estimated_length)
+        with torch.no_grad():
+            outputs = self.model(mixture_tensor)
+        outputs = outputs.squeeze(0)  # shape: (2, estimated_length)
+        
+        # Split the two channels: channel 0 for vocals, channel 1 for speech
+        vocals = outputs[0].cpu().numpy()
+        speech = outputs[1].cpu().numpy()
+        
+        # Adjust lengths to match the original input length
+        vocals = self.adjust_length(vocals, original_length)
+        speech = self.adjust_length(speech, original_length)
+        
+        # Save the outputs
+        write(output_vocals_file, vocals, self.sample_rate)
+        write(output_speech_file, speech, self.sample_rate)
+        logging.info(f'Extracted vocals saved to {output_vocals_file}')
+        logging.info(f'Extracted speech saved to {output_speech_file}')
+
     
 if __name__ == "__main__":
-    audio_tools = AudioTools()
-    audio_tools.main(audio_path='/mnt/c/Users/tsepe/Downloads/Madonna_-_La_Isla_Bonita.mp3')
+    use_my_model = True
+    if not use_my_model:
+        audio_tools = AudioTools()
+        audio_tools.main(audio_dir='/mnt/c/Users/tsepe/Downloads/BiglyBT/Madonna')
+    else:
+        # Update these paths with the actual locations of your model and audio file.
+        model_path = 'models/vocal_separator_model.pth'
+        mixture_file = '/mnt/c/Users/tsepe/Downloads/Madonna_-_La_Isla_Bonita.mp3'
+        output_vocals_file = f'exports/audio/vocals/{path.basename(mixture_file)}_extracted_vocals.wav'
+        output_speech_file = f'exports/audio/speech/{path.basename(mixture_file)}_extracted_speech.wav'
+        
+        extractor = VocalSpeechExtractor(model_path, device='cpu', sample_rate=16000)
+        extractor.extract_sources(mixture_file, output_vocals_file, output_speech_file)

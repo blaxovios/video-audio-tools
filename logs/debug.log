@@ -49,3 +49,226 @@
 2025-03-15 00:16:26,412 - root - INFO - Decomposed.
 2025-03-15 00:16:27,413 - root - INFO - Vocals and Speech Separated
 2025-03-15 00:16:27,413 - root - INFO - Time to extract vocals and speech from audio: 33.28557205200195
+2025-03-15 00:41:36,328 - root - INFO - Local logging setup complete
+2025-03-15 00:41:49,339 - root - INFO - Local logging setup complete
+2025-03-15 00:41:49,348 - root - INFO - Loaded audio from local path
+2025-03-15 00:42:22,347 - root - INFO - Decomposed.
+2025-03-15 00:42:23,307 - root - INFO - Vocals and Speech Separated
+2025-03-15 00:42:23,308 - root - INFO - Time to extract vocals and speech from audio: 33.95890688896179
+2025-03-15 00:53:52,953 - root - INFO - Local logging setup complete
+2025-03-15 00:54:04,619 - root - INFO - Local logging setup complete
+2025-03-15 00:54:04,669 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,669 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,669 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,669 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,669 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,669 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,669 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,669 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,670 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,672 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,672 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,673 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,674 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,677 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,679 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,680 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,680 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,681 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,682 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,682 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,683 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,684 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,685 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,685 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,685 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,685 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,686 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,686 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,686 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,686 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,686 - root - INFO - Loaded audio from local path
+2025-03-15 00:54:04,687 - root - INFO - Loaded audio from local path
+2025-03-15 01:00:16,676 - root - INFO - Decomposed.
+2025-03-15 01:00:19,789 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:00:19,794 - root - INFO - Time to extract vocals and speech from audio: 375.1035749912262
+2025-03-15 01:00:19,981 - root - INFO - Loaded audio from local path
+2025-03-15 01:00:24,540 - root - INFO - Decomposed.
+2025-03-15 01:00:34,099 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:00:34,103 - root - INFO - Time to extract vocals and speech from audio: 389.4266548156738
+2025-03-15 01:00:34,305 - root - INFO - Loaded audio from local path
+2025-03-15 01:00:35,157 - root - INFO - Decomposed.
+2025-03-15 01:00:36,188 - root - INFO - Decomposed.
+2025-03-15 01:00:36,461 - root - INFO - Decomposed.
+2025-03-15 01:00:38,158 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:00:38,164 - root - INFO - Time to extract vocals and speech from audio: 393.47162890434265
+2025-03-15 01:00:38,358 - root - INFO - Loaded audio from local path
+2025-03-15 01:00:39,377 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:00:39,384 - root - INFO - Time to extract vocals and speech from audio: 394.6913595199585
+2025-03-15 01:00:39,572 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:00:39,576 - root - INFO - Time to extract vocals and speech from audio: 394.88378953933716
+2025-03-15 01:00:39,597 - root - INFO - Loaded audio from local path
+2025-03-15 01:00:39,763 - root - INFO - Loaded audio from local path
+2025-03-15 01:00:43,121 - root - INFO - Decomposed.
+2025-03-15 01:00:56,227 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:00:56,256 - root - INFO - Time to extract vocals and speech from audio: 411.58594155311584
+2025-03-15 01:00:56,739 - root - INFO - Loaded audio from local path
+2025-03-15 01:00:59,210 - root - INFO - Decomposed.
+2025-03-15 01:01:16,839 - root - INFO - Decomposed.
+2025-03-15 01:01:25,404 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:01:25,424 - root - INFO - Time to extract vocals and speech from audio: 440.75051975250244
+2025-03-15 01:01:25,239 - root - INFO - Loaded audio from local path
+2025-03-15 01:01:28,662 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:01:28,671 - root - INFO - Time to extract vocals and speech from audio: 443.98259973526
+2025-03-15 01:01:28,891 - root - INFO - Loaded audio from local path
+2025-03-15 01:01:30,062 - root - INFO - Decomposed.
+2025-03-15 01:01:30,492 - root - INFO - Decomposed.
+2025-03-15 01:01:33,638 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:01:33,642 - root - INFO - Time to extract vocals and speech from audio: 448.96636486053467
+2025-03-15 01:01:33,809 - root - INFO - Decomposed.
+2025-03-15 01:01:33,850 - root - INFO - Loaded audio from local path
+2025-03-15 01:01:34,130 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:01:34,148 - root - INFO - Time to extract vocals and speech from audio: 449.4644558429718
+2025-03-15 01:01:34,374 - root - INFO - Loaded audio from local path
+2025-03-15 01:01:36,692 - root - INFO - Decomposed.
+2025-03-15 01:01:53,214 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:01:53,219 - root - INFO - Time to extract vocals and speech from audio: 468.5293035507202
+2025-03-15 01:01:53,528 - root - INFO - Loaded audio from local path
+2025-03-15 01:01:53,618 - root - INFO - Decomposed.
+2025-03-15 01:01:54,854 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:01:54,856 - root - INFO - Time to extract vocals and speech from audio: 470.16263127326965
+2025-03-15 01:01:55,049 - root - INFO - Loaded audio from local path
+2025-03-15 01:02:06,288 - root - INFO - Decomposed.
+2025-03-15 01:02:06,736 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:02:06,741 - root - INFO - Time to extract vocals and speech from audio: 482.04719614982605
+2025-03-15 01:02:07,065 - root - INFO - Loaded audio from local path
+2025-03-15 01:02:13,722 - root - INFO - Decomposed.
+2025-03-15 01:02:15,895 - root - INFO - Decomposed.
+2025-03-15 01:02:16,698 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:02:16,768 - root - INFO - Time to extract vocals and speech from audio: 492.088495016098
+2025-03-15 01:02:17,129 - root - INFO - Loaded audio from local path
+2025-03-15 01:02:30,457 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:02:30,741 - root - INFO - Time to extract vocals and speech from audio: 506.06695461273193
+2025-03-15 01:02:32,572 - root - INFO - Loaded audio from local path
+2025-03-15 01:02:48,730 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:02:48,757 - root - INFO - Time to extract vocals and speech from audio: 524.0735385417938
+2025-03-15 01:02:49,047 - root - INFO - Loaded audio from local path
+2025-03-15 01:02:54,245 - root - INFO - Decomposed.
+2025-03-15 01:02:55,399 - root - INFO - Decomposed.
+2025-03-15 01:02:56,564 - root - INFO - Decomposed.
+2025-03-15 01:02:59,744 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:02:59,813 - root - INFO - Time to extract vocals and speech from audio: 535.126809835434
+2025-03-15 01:03:00,219 - root - INFO - Loaded audio from local path
+2025-03-15 01:03:08,461 - root - INFO - Decomposed.
+2025-03-15 01:03:08,814 - root - INFO - Decomposed.
+2025-03-15 01:03:09,055 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:03:09,072 - root - INFO - Time to extract vocals and speech from audio: 544.3967635631561
+2025-03-15 01:03:09,330 - root - INFO - Loaded audio from local path
+2025-03-15 01:03:16,551 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:03:16,557 - root - INFO - Time to extract vocals and speech from audio: 551.8760998249054
+2025-03-15 01:03:17,175 - root - INFO - Decomposed.
+2025-03-15 01:03:18,578 - root - INFO - Decomposed.
+2025-03-15 01:03:18,783 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:03:18,846 - root - INFO - Time to extract vocals and speech from audio: 554.1731717586517
+2025-03-15 01:03:19,367 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:03:19,371 - root - INFO - Time to extract vocals and speech from audio: 554.6796741485596
+2025-03-15 01:03:27,974 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:03:27,988 - root - INFO - Time to extract vocals and speech from audio: 563.3160297870636
+2025-03-15 01:03:39,269 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:03:39,273 - root - INFO - Time to extract vocals and speech from audio: 574.5887117385864
+2025-03-15 01:03:41,475 - root - INFO - Decomposed.
+2025-03-15 01:03:43,833 - root - INFO - Decomposed.
+2025-03-15 01:03:44,690 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:03:44,695 - root - INFO - Time to extract vocals and speech from audio: 580.0251779556274
+2025-03-15 01:03:45,370 - root - INFO - Decomposed.
+2025-03-15 01:03:46,716 - root - INFO - Decomposed.
+2025-03-15 01:03:47,124 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:03:47,130 - root - INFO - Time to extract vocals and speech from audio: 582.4552390575409
+2025-03-15 01:03:48,554 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:03:48,556 - root - INFO - Time to extract vocals and speech from audio: 583.8843982219696
+2025-03-15 01:03:49,757 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:03:49,760 - root - INFO - Time to extract vocals and speech from audio: 585.0804026126862
+2025-03-15 01:03:50,530 - root - INFO - Decomposed.
+2025-03-15 01:03:53,419 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:03:53,423 - root - INFO - Time to extract vocals and speech from audio: 588.7527227401733
+2025-03-15 01:03:53,492 - root - INFO - Decomposed.
+2025-03-15 01:03:54,366 - root - INFO - Decomposed.
+2025-03-15 01:03:56,433 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:03:56,436 - root - INFO - Time to extract vocals and speech from audio: 591.7558114528656
+2025-03-15 01:03:57,312 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:03:57,315 - root - INFO - Time to extract vocals and speech from audio: 592.6382632255554
+2025-03-15 01:04:02,232 - root - INFO - Decomposed.
+2025-03-15 01:04:05,088 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:04:05,090 - root - INFO - Time to extract vocals and speech from audio: 600.4014508724213
+2025-03-15 01:04:07,312 - root - INFO - Decomposed.
+2025-03-15 01:04:10,167 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:04:10,173 - root - INFO - Time to extract vocals and speech from audio: 605.5024342536926
+2025-03-15 01:04:34,340 - root - INFO - Decomposed.
+2025-03-15 01:04:36,013 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:04:36,016 - root - INFO - Time to extract vocals and speech from audio: 219.24869799613953
+2025-03-15 01:04:38,082 - root - INFO - Decomposed.
+2025-03-15 01:04:40,033 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:04:40,036 - root - INFO - Time to extract vocals and speech from audio: 260.0486400127411
+2025-03-15 01:04:43,399 - root - INFO - Decomposed.
+2025-03-15 01:04:44,941 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:04:44,943 - root - INFO - Time to extract vocals and speech from audio: 147.7965316772461
+2025-03-15 01:04:50,299 - root - INFO - Decomposed.
+2025-03-15 01:04:52,013 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:04:52,017 - root - INFO - Time to extract vocals and speech from audio: 203.12039637565613
+2025-03-15 01:04:52,552 - root - INFO - Decomposed.
+2025-03-15 01:04:53,412 - root - INFO - Decomposed.
+2025-03-15 01:04:54,153 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:04:54,154 - root - INFO - Time to extract vocals and speech from audio: 200.29820251464844
+2025-03-15 01:04:54,377 - root - INFO - Decomposed.
+2025-03-15 01:04:55,169 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:04:55,171 - root - INFO - Time to extract vocals and speech from audio: 255.56874179840088
+2025-03-15 01:04:55,835 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:04:55,836 - root - INFO - Time to extract vocals and speech from audio: 126.7736587524414
+2025-03-15 01:04:55,950 - root - INFO - Decomposed.
+2025-03-15 01:04:57,459 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:04:57,460 - root - INFO - Time to extract vocals and speech from audio: 259.09826254844666
+2025-03-15 01:04:58,895 - root - INFO - Decomposed.
+2025-03-15 01:05:00,320 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:05:00,320 - root - INFO - Time to extract vocals and speech from audio: 260.5541105270386
+2025-03-15 01:05:00,476 - root - INFO - Decomposed.
+2025-03-15 01:05:00,273 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:05:00,275 - root - INFO - Time to extract vocals and speech from audio: 265.96648836135864
+2025-03-15 01:05:01,939 - root - INFO - Decomposed.
+2025-03-15 01:05:02,714 - root - INFO - Decomposed.
+2025-03-15 01:05:03,234 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:05:03,236 - root - INFO - Time to extract vocals and speech from audio: 217.60873436927795
+2025-03-15 01:05:03,896 - root - INFO - Decomposed.
+2025-03-15 01:05:03,999 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:05:04,000 - root - INFO - Time to extract vocals and speech from audio: 190.46327924728394
+2025-03-15 01:05:04,690 - root - INFO - Decomposed.
+2025-03-15 01:05:05,066 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:05:05,066 - root - INFO - Time to extract vocals and speech from audio: 124.82125973701477
+2025-03-15 01:05:05,886 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:05:05,887 - root - INFO - Time to extract vocals and speech from audio: 211.50394129753113
+2025-03-15 01:05:06,888 - root - INFO - Decomposed.
+2025-03-15 01:05:08,037 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:05:08,038 - root - INFO - Time to extract vocals and speech from audio: 180.9521872997284
+2025-03-15 01:05:09,117 - root - INFO - Decomposed.
+2025-03-15 01:05:09,430 - root - INFO - Decomposed.
+2025-03-15 01:05:10,436 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:05:10,436 - root - INFO - Time to extract vocals and speech from audio: 157.81095004081726
+2025-03-15 01:05:10,724 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:05:10,724 - root - INFO - Time to extract vocals and speech from audio: 121.36422204971313
+2025-03-15 01:05:11,601 - root - INFO - Decomposed.
+2025-03-15 01:05:12,782 - root - INFO - Vocals and Speech Separated
+2025-03-15 01:05:12,782 - root - INFO - Time to extract vocals and speech from audio: 197.72480511665344
+2025-03-15 01:32:18,454 - root - INFO - Local logging setup complete
+2025-03-15 01:38:18,655 - root - INFO - Local logging setup complete
+2025-03-15 01:40:04,785 - root - INFO - Local logging setup complete
+2025-03-15 01:40:48,888 - root - INFO - Epoch [1/5], Loss: 0.0248
+2025-03-15 01:41:18,964 - root - INFO - Epoch [2/5], Loss: 0.0177
+2025-03-15 01:41:49,150 - root - INFO - Epoch [3/5], Loss: 0.0195
+2025-03-15 01:42:19,210 - root - INFO - Epoch [4/5], Loss: 0.0167
+2025-03-15 01:42:49,669 - root - INFO - Epoch [5/5], Loss: 0.0174
+2025-03-15 01:42:49,671 - root - INFO - Model saved to models/vocal_separator_model.pth
+2025-03-15 01:44:08,173 - root - INFO - Local logging setup complete
+2025-03-15 01:45:30,263 - root - INFO - Local logging setup complete
+2025-03-15 01:46:33,533 - root - INFO - Local logging setup complete
+2025-03-15 01:48:37,917 - root - INFO - Local logging setup complete
+2025-03-15 01:48:42,875 - root - INFO - Extracted vocals saved to exports/audio/vocals/Madonna_-_La_Isla_Bonita.mp3_extracted_vocals.wav
+2025-03-15 01:48:42,876 - root - INFO - Extracted speech saved to exports/audio/speech/Madonna_-_La_Isla_Bonita.mp3_extracted_speech.wav
